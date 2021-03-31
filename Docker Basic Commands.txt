@@ -27,10 +27,18 @@ for example-->docker search --limit 5 ubuntu
 
 ..........................................................................
 5)
-To search Offical Docker image in Docker hub
+To search Offical Docker images in Docker hub
 
 docker search --filter is -official=true <image name>
 
 for example-->docker search --filter is -official=true ubuntu
 
 ....................................................................................
+6)
+To search Automated images in Docker Hub
+
+docker search --filter is -automated=true <image name>
+
+for example-->docker search --filter is -automated=true ubuntu
+
+--------------------------------------------------------------------------------------
