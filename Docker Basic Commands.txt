@@ -1,0 +1,36 @@
+1)
+To check Docker installed in pc or not.
+
+docker --version
+
+.....................................................................
+2)
+To Pull image from Docker Hub.
+
+docker pull <image name>
+
+for example->docker pull ubuntu
+
+.....................................................................
+3)
+To check images in Docker local Machine
+
+docker images
+
+........................................................................
+4)
+To search the Top Five List in Docker Hub
+
+docker search --limit 5 <image name>
+
+for example-->docker search --limit 5 ubuntu
+
+..........................................................................
+5)
+To search Offical Docker image in Docker hub
+
+docker search --filter is -official=true <image name>
+
+for example-->docker search --filter is -official=true ubuntu
+
+....................................................................................
