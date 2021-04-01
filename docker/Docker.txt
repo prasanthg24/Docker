@@ -1,0 +1,52 @@
+Example for why docker?
+
+docker installs ->
+docker engine - contains docker daemon , REST API to communicate with docker daemon , CLI communicate with daemon and accepts commands
+docker compose - it used to run multiple docker containers once
+docker Machine - it used to install docker engine
+kitematic      - open source project to simplify the use of docker on windows  
+
+
+docker?    host os ->vm->guest os space used ,RAM used but
+           host os->docker engine -> containers 
+
+docker image -> to create docker image we need docker file ,with in a file define the dependencies, packages that are needed by your application.
+                docker image runs as docker container
+
+docker container ->runtime instance of docker image, it have more than one docker image or layers of docker images
+           
+docker registry -> docker has its own registry called docker hub .It is the place where you store docker images, the images pull from remote server and run locally on system.
+                   and also we can push images to dockr hub and share with users via docker hub.In short , it is a storage for all docker images
+
+docker compose -> for ex one container containing web app application , another conatiner postgres application , third container redis application ->yaml file  => to run these containera at once use docker-compose up command
+
+BASIC COMMANDS -> Opem windows powershell as administrator
+ 1. docker --version
+ 2. docker run hello-world
+ 3. docker images or docker image ls
+
+ 4. docker pull <imagename>   eg:docker pull ubuntu  or docker pull <imagename>:version
+ 5. docker run -it -d <imagename>   -> docker images runs as a container   -it means interactive , terminal 
+ 6. docker ps ->running containers
+ 7. docker ps -a       -> it shows all the container running and existing
+ 8. docker exec -it <container id> bash     -> to access the running container -> then it convet to rootuser echo hello msg container says hello then exit
+ 9. docker stop <container id>   -> to stop the container by giving gracetime
+ 10. docker kill <container id>  -> to stop the container immediately
+ 11. docker commit <container id> <dockerid>/<imagename>    -> docker commit <containerid> dockercode1/ubuntu  -> to create new image in local repository
+ 12. docker push <dockerid>/<imagename>   ->push images to docker hub
+ 13.docker rm <containerid>  ->remove container
+ 14.docker rmi <image id>   -> to delete image ,images we created only deleted not the pulled images
+ 15. docker login 
+
+
+ 16 docker search <alpine>
+ 17. docker search --limit 5 alpine
+ 18. docker search --filter is-automated=true alpine
+ 19. docker search --filter is-official=true alpine
+ 20. docker history <alpine>
+ 21. docker images prune -a   => unused images gets deleted or images that not run or imsges that didn't have a container
+ 22. docker container create --name myos <imagename>  =>create container
+ 23. docker container run -it --name myrunos <imagename>    = run command automatically create conatiner and run it
+ 24. docker container create --name mywebserver -p 6060:80 nginx  = create webserver
+ 25. docker start <container id>
+ 
